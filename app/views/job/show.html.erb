@@ -1,0 +1,38 @@
+
+<div class="row">
+  <div class="panel panel-primary filterable">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= @job.name %></h3>
+    </div>
+    <table class="table">
+      <tbody>
+      <tr>
+        <td>
+          <strong>Location :</strong>
+          <p><%= @job.location %></p>
+        </td>
+      </tr>
+
+      <tr>
+         <td>
+           <strong>Category:</strong>
+          <p><%=  @job.category.name %></p>
+        </td>
+        <td>
+          <strong>Type:</strong>
+          <p><%= @job.job_type %></p>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2">
+          <strong>Description:</strong>
+          <p><%= @job.description %></p>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%= link_to("Apply Now" , { :controller  => "resume", :action => "apply", :job_id => @job.id }, :target =>"_parent" ,class: "btn btn-primary") %>

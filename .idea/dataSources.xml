@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1126354192">
+    <data-source source="LOCAL" name="Rails facebookapp: development" uuid="29435adc-4b35-4c74-bdb1-777288d205e9">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:facebookapp_development</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>df9bdf98df99df9edf9fdf9c</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails facebookapp: test" uuid="cdea4ed5-f29a-41b8-9b29-226cacbcc869">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:facebookapp_test</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>df9bdf98df99df9edf9fdf9c</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails facebookapp: production" uuid="6b413c95-7bda-41a5-ada6-f51ed0a5269f">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:facebookapp_production</jdbc-url>
+      <user-name>facebookapp</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfecdfebdfe9dfefdfe8dfe5dfe5dfe1dfebdffadffadff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

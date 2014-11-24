@@ -1,0 +1,88 @@
+<div class="row">
+  <div class="panel panel-primary filterable">
+    <div class="panel-heading">
+      <h3 class="panel-title">You are applying to<strong> <%= @job.name %></strong></h3>
+    </div>
+    <table class="table">
+      <tbody>
+      <tr>
+        <td>
+          <lable>First Name</lable>
+          <input type="text" class="form-control" placeholder="<%= current_user.first_name %>"   disabled>
+
+        </td>
+        <td>
+          <lable>Last Name</lable>
+          <input type="text" class="form-control" placeholder="<%= current_user.last_name %>"   disabled>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <lable>Email</lable>
+          <input type="text" class="form-control" placeholder="<%= current_user.email %>"   disabled>
+        </td>
+        <td>
+          <lable>Phone</lable>
+          <input type="text" class="form-control" placeholder="<%= current_user.phone %>"   disabled>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label class="col-sm-3 control-label">City</label>
+          <div class="col-sm-5 selectContainer">
+            <select name="colors" class="form-control" >
+              <option value="black"><%= current_user.city %></option>
+
+            </select>
+          </div>
+        </td>
+
+        <td>
+          <label class="col-sm-3 control-label">Province/State</label>
+          <div class="col-sm-5 selectContainer">
+            <select name="colors" class="form-control" >
+              <option value="black"><%= current_user.province %></option>
+
+            </select>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <%= form_for(:resume , :url => {:action => 'create'}, :method => 'post') do |f| %>
+        <%= f.hidden_field :job_id, :value => @job.id %>
+    <table class="table">
+      <tbody>
+
+          <tr>
+            <td>
+              <label>Upload CV</label>
+              <%= f.file_field :cv , :class =>"" %>
+              ( *.doc , *.docx, *.pdf)
+            </td>
+            <td></td>
+            </tr>
+
+          <tr>
+            <td colspan="2">
+              <%= f.label :cover_letter %>
+              <%= f.text_area :cover_letter , :class => "form-control"%><br />
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center" colspan="2">
+              <%= submit_tag("Send Application",:class => "btn btn-primary") %>
+            </td>
+          </tr>
+          <tr>
+
+          </tr>
+      </tbody>
+    </table>
+    <% end %>
+  </div>
+</div>
+
+

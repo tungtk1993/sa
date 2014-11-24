@@ -1,0 +1,89 @@
+<% if !flash[:notice].blank? %>
+    <div class="success" style=" background:green; color:#ffffff; margin:10px ">
+      <%= flash[:notice]%>
+    </div>
+<% end %>
+
+
+
+
+
+
+
+
+
+<div class="search-form container">
+  <%= search_form_for @search ,  url:{action: "index"} , class: "form-search" do |f| %>
+
+  <div class="row">
+    <div class=" col-md-12">
+      <%= f.search_field :name_or_location_or_job_level_or_salary_or_category_name_cont ,class: "form-control" ,placeholder: "Enter job title, position, relevant skills,..." %>
+
+    </div>
+  </div>
+    <br />
+    <div class="row">
+      <div class="col-xs-6">
+        <%= f.select(:category_id_eq,options_from_collection_for_select(Category.all, "id", "name") , {include_blank: "All Category"}, { :class => 'form-control' }) %>
+      </div>
+
+      <div class="col-xs-6">
+        <%= f.select(:location_eq, options_from_collection_for_select(Job.select(:location).uniq, "location", "location") , {include_blank: "All Location"}, { :class => 'form-control' }) %>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-xs-6">
+        <%= f.select(:job_level_eq, options_from_collection_for_select(Job.select(:job_level).uniq, "job_level", "job_level") , {include_blank: "All Job"}, { :class => 'form-control' }) %>
+      </div>
+      <div class="col-xs-6">
+        <%= f.search_field :salary_gt ,class: "form-control" ,placeholder: "Enter job title, position, relevant skills,...",type: "number" ,min: "0" ,step: "50" ,tabindex: "105" ,maxlength: "6",placeholder: "Minimum monthly salary (USD)"%>
+
+
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md-6 col-md-offset-5">
+        <button type="submit" class="btn btn-info btn-lg" style="width:173px"><span class="glyphicon glyphicon-search"></span> Search </button></div>
+    </div>
+
+
+  <% end %>
+</div>
+<br />
+<div class="row">
+  <div class="panel panel-primary filterable">
+    <div class="panel-heading">
+      <h3 class="panel-title">Job List</h3>
+    </div>
+    <table class="table">
+      <thead>
+      <tr class="filters">
+        <th>Vị trí làm việc</th>
+        <th>Nơi làm việc</th>
+        <th>Mức lương</th>
+        <th>Ngày làm mới</th>
+        <th>Hạn nộp HS</th>
+        <th>Loại công viec</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @jobs.each  do |job| %>
+          <tr>
+            <td><%= link_to(job.name, {:controller => 'job', :action => 'show', :id => job.id }, :target => '_self') %></td>
+            <td><%= job.location %></td>
+            <td><%= job.salary %></td>
+            <td><%= job.date_start %></td>
+            <td><%= job.expires %></td>
+            <td><%= job.job_type %></td>
+          </tr>
+      <% end %>
+      <tr>
+        <td colspan="6" style="text-align: center"><p><%= will_paginate @jobs%></p></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

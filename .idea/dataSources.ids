@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails facebookapp: development" uuid="29435adc-4b35-4c74-bdb1-777288d205e9">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails facebookapp: test" uuid="cdea4ed5-f29a-41b8-9b29-226cacbcc869">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails facebookapp: production" uuid="6b413c95-7bda-41a5-ada6-f51ed0a5269f">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>
